@@ -1,0 +1,59 @@
+<!--pages/home/home.wxml-->
+<view wx:if="{{!isLogin}}">
+  <view class="input-wrap rowCenter">
+    <text class="input-label">手机号码</text>
+    <input type="number" bindinput="bindPhoneInput"/>
+  </view>
+  <view class="input-wrap rowCenter" style="margin:20px 0;">
+    <text class="input-label">登录密码</text>
+    <input type="password" bindinput="bindPasswordInput"/>
+  </view>
+  <button type="primary" style="width:100%;" bindtap="loginSubmit">登录系统</button>
+</view>
+
+<view wx:if="{{isLogin}}">
+  <view class="card fluid rowBothEnds" bindtap="toChangePwd">
+    <view>
+      <view>{{userInfo.name}}({{userInfo.role}})</view>
+      <view>{{userInfo.carLicense}}({{userInfo.status}})</view>
+    </view>
+    <image src="/static/icons/more-right-gray.png" class="icon" />
+  </view>
+
+  <view class="fluid"
+    style="margin:15px 0;display:flex;flex-wrap: wrap;align-content: flex-start;  justify-content: space-between;"
+    wx:if="{{userInfo.role == '系统操作员'}}">
+    <view class="card item center" data-missiontype="4" bindtap="toListPage">
+      <view>调度待审核</view>
+      <view>{{allmission.dispatch.num}}</view>
+    </view>
+    <view class="card item center" data-missiontype="5" bindtap="toListPage">
+      <view>财务待审核</view>
+      <view>{{allmission.finance.num}}</view>
+    </view>
+  </view>
+
+  <view class="card" style="padding:0;">
+    <view class="rowBothEnds" style="padding:15px;" data-missiontype="1" bindtap="toListPage">
+      <view>最新任务</view>
+      <view class="rowCenter">
+        <view>{{allmission.new.num}}</view>
+        <image src="/static/icons/more-right-gray.png" class="icon" />
+      </view>
+    </view>
+    <view class="rowBothEnds" style="padding:15px;" data-missiontype="2" bindtap="toListPage">
+      <view>救援中的任务</view>
+      <view class="rowCenter">
+        <view>{{allmission.inprogress.num}}</view>
+        <image src="/static/icons/more-right-gray.png" class="icon" />
+      </view>
+    </view>
+    <view class="rowBothEnds" style="padding:15px;" data-missiontype="3" bindtap="toListPage">
+      <view>已完成任务</view>
+      <view class="rowCenter">
+        <view>{{allmission.complete.num}}</view>
+        <image src="/static/icons/more-right-gray.png" class="icon" />
+      </view>
+    </view>
+  </view>
+</view>

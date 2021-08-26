@@ -1,0 +1,99 @@
+<!--pages/dispatch/dispatch.wxml-->
+<view>
+  <view class="pad title">任务详情</view>
+  <view class="pad item">
+    <view class="text">
+      <view>救援地点：</view>
+      <view style="flex:1;">{{missionInfo.rescueLocation}}</view>
+    </view>
+    <image src="/static/icons/location_red.png" bindtap="openRescueLocation" data-location="{{missionInfo.rescueLocation}}" class="icon" />
+  </view>
+  <view class="pad item">
+    <view class="text">
+      <view>托运地点：</view>
+      <view style="flex:1;">{{missionInfo.checkLocation}}</view>
+    </view>
+    <image src="/static/icons/location_blue.png" class="icon" bindtap="openCheckLocation" data-location="{{missionInfo.checkLocation}}"/>
+  </view>
+  <view class="pad item">
+    <view class="text">
+      <view>车主信息：</view>
+      <view style="flex:1;">{{missionInfo.driverInfo.name}} {{missionInfo.driverInfo.phone}}</view>
+    </view>
+    <image src="/static/icons/mobile_red.png" class="icon" data-phone="{{missionInfo.driverInfo.phone}}" bindtap="phoneCall"/>
+  </view>
+  <view class="pad item">
+    <view class="text">
+      <view>车辆信息：</view>
+      <view style="flex:1;">{{missionInfo.vehicleInfo}} 车</view>
+    </view>
+  </view>
+  <view class="pad item">
+    <view class="text">
+      <view>订单费用：</view>
+      <view style="flex:1;">{{missionInfo.orderFee.fee}} ({{missionInfo.orderFee.type}})</view>
+    </view>
+  </view>
+  <view class="pad item">
+    <view class="text">
+      <view>调度信息：</view>
+      <view style="flex:1;">{{missionInfo.dispatchInfo.name}}, {{missionInfo.dispatchInfo.time}}</view>
+    </view>
+    <image src="/static/icons/mobile_blue.png" class="icon" data-phone="{{missionInfo.dispatchInfo.phone}}" bindtap="phoneCall"/>
+  </view>
+  <view class="pad item">
+    <view class="text">
+      <view>救援信息：</view>
+      <view style="flex:1;">{{missionInfo.rescueInfo.name}} ({{missionInfo.rescueInfo.carLicense}}), {{missionInfo.rescueInfo.time}}</view>
+    </view>
+    <image src="/static/icons/mobile_blue.png" class="icon" data-phone="{{missionInfo.rescueInfo.phone}}" bindtap="phoneCall"/>
+  </view>
+  <view class="pad item">
+    <view class="text">
+      <view>备注信息：</view>
+      <view style="flex:1;">{{missionInfo.missionRemark}}</view>
+    </view>
+  </view>
+
+  <view class="divider" />
+
+  <view class="pad title">现场照片</view>
+  <view class="pad item" style="padding-bottom:5px;display: flex;justify-content: space-between;flex-wrap: wrap;">
+    <image class="thumbnail" />
+    <image class="thumbnail" />
+    <image class="thumbnail" />
+    <image class="thumbnail" />
+    <image class="thumbnail" />
+  </view>
+
+  <view class="divider" />
+
+  <view class="pad title">车主确认签字</view>
+  <view class="pad item">
+    <image class="signature"></image>
+  </view>
+
+  <view class="divider" />
+
+  <view class="pad title">机构确认签字</view>
+  <view class="pad item">
+    <image class="signature">dd</image>
+  </view>
+
+  <view class="divider" />
+
+  <view class="pad title" style="display:flex;">
+    <view>备注信息:</view>
+    <view style="margin-left: 10px;flex:1;">{{remark}}</view>
+  </view>
+
+  <!-- <view class="divider" /> -->
+  <!-- <view class="weui-tabbar-placeholder"></view> -->
+
+</view>
+
+<view class="buttom_area">
+  <view style="padding:7px 15px">
+    <button class="center" type="primary" style="width:100%;height: 50px;" bindtap="onsubmit">确认信息并通过审核</button>
+  </view>
+</view>

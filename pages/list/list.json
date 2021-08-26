@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "list": "/component/list/index"
+  },
+  "navigationBarTitleText": "任务列表"
+}

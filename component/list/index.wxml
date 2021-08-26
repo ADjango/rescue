@@ -1,0 +1,66 @@
+<!--component/list/index.wxml-->
+<view class="list-container">
+
+  <!-- <block wx:for="{{missionList}}" wx:key="key">
+    <view class="item">
+      <view class="title">{{item.title}}</view>
+      <view class="rowBothEnds">
+        <view class="type">{{item.type}}</view>
+        <view class="time">{{item.time}}</view>
+      </view>
+    </view>
+  </block> -->
+
+  <navigator url="/pages/new/new">
+    <view class="item">
+      <view class="title">任务标题：到最新任务页面</view>
+      <view class="rowBothEnds">
+        <view class="type">拖车</view>
+        <view class="time">2021-02-08 12:32</view>
+      </view>
+    </view>
+  </navigator>
+  <navigator url="/pages/inprogress/inprogress">
+    <view class="item">
+      <view class="title">任务标题：到进行中任务页面</view>
+      <view class="rowBothEnds">
+        <view class="type">搭电</view>
+        <view class="time">2021-02-08 12:32</view>
+      </view>
+    </view>
+  </navigator>
+  <navigator url="/pages/detail/detail">
+    <view class="item">
+      <view class="title">任务标题：到已完成任务页面</view>
+      <view class="rowBothEnds">
+        <view class="type">其他</view>
+        <view class="time">2021-02-08 12:32</view>
+      </view>
+    </view>
+  </navigator>
+  <navigator url="/pages/dispatch/dispatch">
+    <view class="item">
+      <view class="title">任务标题：到调度审核页面</view>
+      <view class="rowBothEnds">
+        <view class="type">拖车</view>
+        <view class="time">2021-02-08 12:32</view>
+      </view>
+    </view>
+  </navigator>
+  <navigator url="/pages/finance/finance">
+    <view class="item">
+      <view class="title">任务标题：到财务审核页面</view>
+      <view class="rowBothEnds">
+        <view class="type">拖车</view>
+        <view class="time">2021-02-08 12:32</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="item">
+    <view class="title">title</view>
+    <view class="rowBothEnds">
+      <view class="type">type</view>
+      <view class="time">time</view>
+    </view>
+  </view>
+</view>

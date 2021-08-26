@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "list": "/component/list/index"
+  },
+  "navigationBarTitleText": "已完成任务详情"
+}

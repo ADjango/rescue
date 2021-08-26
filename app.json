@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/complete/complete",
+    "pages/map/map",
+    "pages/list/list",
+    "pages/index/index",
+    "pages/inprogress/inprogress",
+    "pages/new/new",
+    "pages/finance/finance",
+    "pages/dispatch/dispatch",
+    "pages/logs/logs",
+    "pages/changePwd/changePwd"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
